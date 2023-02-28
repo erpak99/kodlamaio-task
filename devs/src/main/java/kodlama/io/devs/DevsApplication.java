@@ -7,11 +7,13 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 import kodlama.io.devs.core.utilities.exceptions.BusinessException;
 import kodlama.io.devs.core.utilities.exceptions.ProblemDetails;
 
 @SpringBootApplication
+@RestControllerAdvice
 public class DevsApplication {
 
 	public static void main(String[] args) {
@@ -30,5 +32,6 @@ public class DevsApplication {
 		problemDetails.setMessage(businessException.getMessage());
 		return problemDetails;
 	}
+
 	
-}
+	}

@@ -67,6 +67,7 @@ public class LanguageManager implements LanguageService {
 
 	@Override
 	public void delete(int id) {
+		languageBusinessRules.checkIfLanguageExists(id);
 		languageRepository.deleteById(id);
 	}
 
