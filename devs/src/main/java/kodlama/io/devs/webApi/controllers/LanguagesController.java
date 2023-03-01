@@ -2,6 +2,8 @@ package kodlama.io.devs.webApi.controllers;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -28,7 +30,7 @@ public class LanguagesController {
 	
 	@PostMapping()
 	@ResponseStatus(code = HttpStatus.CREATED)
-	public void add(CreateLanguageRequest createLanguageRequest) {
+	public void add(@Valid CreateLanguageRequest createLanguageRequest) {
 		languageService.add(createLanguageRequest);
 	}
 	
@@ -43,7 +45,7 @@ public class LanguagesController {
 	}
 	
 	@PutMapping()
-	public void update(UpdateLanguageRequest updateLanguageRequest) {
+	public void update(@Valid UpdateLanguageRequest updateLanguageRequest) {
 		languageService.update(updateLanguageRequest);
 	}
 	
